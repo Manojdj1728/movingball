@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Ball</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #ball {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            transition: 0.4s ease;
+            box-shadow: 0 0 20px rgba(255,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ball"></div>
+
+    <script>
+        const ball = document.getElementById("ball");
+
+        ball.addEventListener("click", () => {
+            // Get random position inside the window
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+        });
+    </script>
+
+</body>
+</html>
